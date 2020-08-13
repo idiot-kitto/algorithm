@@ -68,8 +68,7 @@ int main()
                 if(arr[i][j] == '@') man_q.push(make_pair(i,j));
                 else if(arr[i][j] == '*') fire_q.push(make_pair(i,j));
             }
-        if(man_q.front().first == 0 || man_q.front().first == h-1 ||
-           man_q.front().second == 0 || man_q.front().second == w-1) cout << "1\n";
+        if(man_q.front().first == 0 || man_q.front().first == h-1 || man_q.front().second == 0 || man_q.front().second == w-1) cout << "1\n";
         else bfs();
     }
     return 0;
