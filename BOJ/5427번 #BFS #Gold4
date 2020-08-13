@@ -4,6 +4,7 @@ int t, w, h, cnt;
 int dir[4][2] = {{1,0},{-1,0},{0,1},{0,-1}};
 char arr[1002][1002];
 queue<pair<int,int>> fire_q, man_q, empty_q;
+
 void bfs(){
     bool check = false;
     cnt = 1;
