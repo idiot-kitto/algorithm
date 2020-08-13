@@ -20,12 +20,11 @@ void bfs(){
             for(int j=0 ; j<4 ; j++){
                 nx = current.first + dir[j][0];
                 ny = current.second + dir[j][1];
-                if(0<=nx && nx<h && 0<=ny && ny<w){
+                if(0<=nx && nx<h && 0<=ny && ny<w)
                     if(arr[nx][ny] == '.' || arr[nx][ny] == '@'){
                         arr[nx][ny] = '*';
                         fire_q.push(make_pair(nx,ny));
                     }
-                }
             }
         }
         tmp = man_q.size();
