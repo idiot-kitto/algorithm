@@ -40,14 +40,8 @@ int main()
         cin >> q;
         if(q == 1){
             cin >> a >> b;
-            if(arr[a-1] % 2 == 0) {
-                if(b % 2 == 0) k = 0;
-                else k = 1;
-            }
-            else {
-                if(b % 2 == 0) k = -1;
-                else k = 0;
-            }
+            if(arr[a-1] % 2 == 0) k = (b % 2 == 0) ? 0 : 1;
+            else k = (b % 2 == 0) ? -1 : 0;
             arr[a-1] = b;
             update(1, 0, n-1, a-1, k);
         }
@@ -62,6 +56,7 @@ int main()
     }
     return 0;
 }
+
 
 /*
 tree의 리프노드에 홀수인지 검사하여 홀수면 1, 아니면 0을 저장하도록 했다. (9번 줄)
