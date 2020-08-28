@@ -30,7 +30,6 @@ int solution(string name) {
             answer += move;
         }
     }
-    
     while(!q.empty()){
         answer += arr[q.front()];
         q.pop();
