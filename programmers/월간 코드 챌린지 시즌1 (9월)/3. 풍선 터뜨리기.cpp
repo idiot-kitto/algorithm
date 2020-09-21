@@ -3,7 +3,7 @@ using namespace std;
 int arr1[1000001],arr2[1000001];
 int solution(vector<int> a) {
     int answer = a.size();
-    arr1[0] = a[0];arr2[a.size()-1]=a[a.size()-1];
+    arr1[0] = a[0]; arr2[a.size()-1]=a[a.size()-1];
 	for (int i=1 ; i<=a.size()-1 ; i++) {
 		if (arr1[i-1]>a[i]) arr1[i]=a[i];
 		else arr1[i] = arr1[i-1];}
