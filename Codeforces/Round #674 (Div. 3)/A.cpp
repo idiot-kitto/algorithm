@@ -23,7 +23,7 @@ int main()
         cin >> n >> x;
         if(n<=2) {cout << 1 << "\n"; continue;}
         n-=2;ans++;
-        if(n%x == 0) ans += n/x;
+        if(n%x==0) ans += n/x;
         else {ans+= n/x;ans++;}
         cout << ans << "\n";
     }
