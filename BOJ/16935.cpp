@@ -48,15 +48,16 @@ long long sum(int node, int start, int end, int left, int right) {
 int n, m, r;
 vvi v;
 void func(int k){
-    if(k == 1){
+    if(k == 1){ // 상하 반전
         for(int i=0 ; i<n/2 ; i++)
             for(int j=0 ; j<m ; j++)
                 swap(v[i][j], v[n-1-i][j]);
-    }else if(k == 2){
+    }else if(k == 2){ // 좌우 반전
         for(int i=0 ; i<n ; i++)
             for(int j=0 ; j<m/2 ; j++)
                 swap(v[i][j], v[i][m-1-j]);
-    }else if(k == 3){
+    }else if(k == 3){ // 오른쪽 90도 회전
+	// 정사각일때, (i,j) --> (j, n-1-i) 
         swap(n,m);
         vvi tmp(n,vi(m));
         for(int i=0 ; i<n ; i++)
@@ -65,7 +66,8 @@ void func(int k){
         for(int i=0 ; i<n ; i++)
             for(int j=0 ; j<m ; j++)
                 v[i][j] = tmp[i][j];
-    }else if(k == 4){
+    }else if(k == 4){ // 왼쪽 90도 회전
+	// 정사각일때, (i,j) --> (n-1-j, i)
         swap(n,m);
         vvi tmp(n,vi(m));
         for(int i=0 ; i<n ; i++)
@@ -74,7 +76,7 @@ void func(int k){
         for(int i=0 ; i<n ; i++)
             for(int j=0 ; j<m ; j++)
                 v[i][j] = tmp[i][j];
-    }else if(k == 5){
+    }else if(k == 5){ // 부분 시계 회전
         int nn = n/2, mm = m/2;
         vvi tmp(nn,vi(mm));
         for(int i=0 ; i<nn ; i++)
@@ -92,7 +94,7 @@ void func(int k){
         for(int i=0 ; i<nn ; i++)
             for(int j=mm ; j<m ; j++)
                 v[i][j] = tmp[i][j-mm];
-    }else if(k == 6){
+    }else if(k == 6){ // 부분 반시계 회전 
         int nn = n/2, mm = m/2;
         vvi tmp(nn,vi(mm));
         for(int i=0 ; i<nn ; i++)
