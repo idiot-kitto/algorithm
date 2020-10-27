@@ -63,7 +63,6 @@ int main(){fastio
     } 
     aa += amx * (m-1);
     bb += bmx * (r-l);
-
     cout << aa * 1000000000 + bb;
     return 0;
 }
