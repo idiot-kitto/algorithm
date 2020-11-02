@@ -64,3 +64,5 @@ int main(){fastio
     } cout << dp[n][n][0] + dp[n][n][1] + dp[n][n][2];
     return 0;
 }
+
+// 파이프 옮기기 1, 2 둘 다 AC
