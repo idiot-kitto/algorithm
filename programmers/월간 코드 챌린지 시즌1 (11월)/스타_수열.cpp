@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int solution(vector<int> a) {
+    int answer = 0; map<int,int> mp;
+    for(int i=0 ; i<a.size() ; i++) mp[a[i]]++;
+    vector<pair<int,int>> v;
+    for(auto iter = mp.begin() ; iter != mp.end() ; iter++)
+        v.push_back({iter->second, iter->first});
+    sort(v.begin(),v.end(),[](const pair<int,int> &v1, const pair<int,int> &v2){
+        return v1.first > v2.first;});    
+    int num = v[0].second, l, r;
+    for(int i=0 ; i<a.size() ; i++) if(a[i] == num){l = i; break;}
+    for(int i=a.size()-1 ; i>=0 ; i--) if(a[i] == num){r = i; break;}
+
+    for(int i=0 ; i<l ; i++) if(a[i] != num) {answer += 2; l++; break;}
+    for(int i=r ; i<a.size() ; i++) if(a[i] != num) {answer += 2; r--; break;}
+    
+    for(int i=l ; i<r ; i++)
+        if(a[i] == num || a[i+1] == num)
+            if(a[i] != a[i+1]) {answer += 2; i++;}
+    
+    return answer;
+}
