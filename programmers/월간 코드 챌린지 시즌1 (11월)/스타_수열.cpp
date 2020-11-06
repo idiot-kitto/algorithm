@@ -3,6 +3,13 @@ using namespace std;
 
 int solution(vector<int> a) {
     int answer = 0; map<int,int> mp;
+    if(a.size() > 2){
+        for(int i=0 ; i<a.size()-2 ; i++)
+            if(a[i] == a[i+1] && a[i+1] == a[i+2]){
+                a.erase(a.begin() + i, a.begin() + i + 1);
+                i--;
+            }
+    }
     for(int i=0 ; i<a.size() ; i++) mp[a[i]]++;
     vector<pair<int,int>> v;
     for(auto iter = mp.begin() ; iter != mp.end() ; iter++)
