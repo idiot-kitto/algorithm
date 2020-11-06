@@ -16,16 +16,21 @@ int solution(vector<int> a) {
         v.push_back({iter->second, iter->first});
     sort(v.begin(),v.end(),[](const pair<int,int> &v1, const pair<int,int> &v2){
         return v1.first > v2.first;});    
-    int num = v[0].second, l, r;
-    for(int i=0 ; i<a.size() ; i++) if(a[i] == num){l = i; break;}
-    for(int i=a.size()-1 ; i>=0 ; i--) if(a[i] == num){r = i; break;}
+    int num, l, r;
+    for(int j=0 ; j<v.size() ; j++){
+        num = v[j].second;
+        if(j && v[j-1].first != v[j].first) break;
+        int tmp = 0;
+        for(int i=0 ; i<a.size() ; i++) if(a[i] == num){l = i; break;}
+        for(int i=a.size()-1 ; i>=0 ; i--) if(a[i] == num){r = i; break;}
 
-    for(int i=0 ; i<l ; i++) if(a[i] != num) {answer += 2; l++; break;}
-    for(int i=r ; i<a.size() ; i++) if(a[i] != num) {answer += 2; r--; break;}
-    
-    for(int i=l ; i<r ; i++)
-        if(a[i] == num || a[i+1] == num)
-            if(a[i] != a[i+1]) {answer += 2; i++;}
-    
+        for(int i=0 ; i<l ; i++) if(a[i] != num) {tmp += 2; l++; break;}
+        for(int i=r ; i<a.size() ; i++) if(a[i] != num) {tmp += 2; r--; break;}
+
+        for(int i=l ; i<r ; i++)
+            if(a[i] == num || a[i+1] == num)
+                if(a[i] != a[i+1]) {tmp += 2; i++;}
+        answer = max(answer, tmp);
+    }
     return answer;
 }
