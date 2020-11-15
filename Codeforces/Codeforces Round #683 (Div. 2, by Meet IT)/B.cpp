@@ -50,25 +50,18 @@ long long sum(int node, int start, int end, int left, int right) {
 int main(){fastio
     int t; cin >> t;
     while(t--){
-        int n, m; cin >> n >> m; vi v(n*m);
-        int check = 0;
+        int n, m, mn = INT_MAX, ans = 0, check = 0; cin >> n >> m; vi v(n*m);
         bool ok = false;
         for(int i=0 ; i<n*m ; i++){
             cin >> v[i];
             if(v[i] == 0) ok = true;
             else if(v[i] < 0) check++;
         }
-        if(ok || check%2 == 0){
-            int ans = 0;
-            for(int i=0 ; i<v.size() ; i++) ans += abs(v[i]);
-            cout << ans << '\n';
-        }else{
-            int mn = 200, ans = 0;
-            for(int i=0 ; i<v.size() ; i++) {ans += abs(v[i]); mn = min(mn, abs(v[i]));}
+        for(int i=0 ; i<v.size() ; i++) ans += abs(v[i]);
+        if(!ok && check%2){
+            for(int i=0 ; i<v.size() ; i++) mn = min(mn, abs(v[i]));
             ans -= (mn*2);
-            cout << ans << '\n';
-        }
- 
+        } cout << ans << '\n';
     }
     return 0;
 }
