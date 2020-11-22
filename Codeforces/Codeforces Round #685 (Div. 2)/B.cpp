@@ -56,7 +56,6 @@ int main(){fastio
         for(int i=0 ; i<q ; i++){
             int l, r; cin >> l >> r;
             if(r-l+1 == n) {cout << "NO\n"; continue;}
-            
             if(find(v.begin()+1,v.begin()+l,v[l]) != v.begin()+l || find(v.begin()+1+r,v.end(),v[r]) != v.end())
                 {cout << "YES\n"; continue;}
             else {cout << "NO\n"; continue;}
