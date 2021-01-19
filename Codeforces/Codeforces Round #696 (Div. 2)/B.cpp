@@ -28,14 +28,12 @@ ll lcm(ll a, ll b){return a*b/gcd(a,b);}
 int dir[4][2] = {{1,0},{0,1},{-1,0},{0,-1}};
  
 bool check[30001];
- 
 int main(){fastio
     vi v;
     check[0] = check[1] = true;
     for(int i=2 ; i*i<30000 ; i++){
-        if(check[i] == false){
+        if(check[i] == false)
             for(int j=i+i ; j<=30000 ; j+=i) check[j] = true;
-        }
     }
     for(int i=1 ; i<=30000 ; i++) if(!check[i]) v.pb(i);
  
