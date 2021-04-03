@@ -68,7 +68,6 @@ int main(){fastio
             }
         }cout << '\n';
  
- 
     }
  
     return 0;
