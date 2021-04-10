@@ -74,9 +74,7 @@ int main(){fastio
                 cout << "-1\n"; goto here;
             }
         }
- 
         cout << s << '\n';
- 
         here:;
     }
  
