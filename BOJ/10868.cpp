@@ -38,6 +38,7 @@ int main()
 }
 
 /*
+
 리프노드에서 상위노드로 올라갈 때, 그 구간에 대한 최소값을 저장하도록 tree[node]를 만들었다.
 test case를 예시로 보자.
 
@@ -59,4 +60,5 @@ n1 = find_min(4(node), 0(start), 2(end), 2(left), 4(right)) 이고, n2 = find_mi
 n1 = find_min(4(node), 0(start), 2(end), 2(left), 4(right)) 에서도 tree[9] 를 return 하여 결국에는 tree[5] (38) 과 tree[9] (100) 을 비교하여 38을 출력하는 방식이다.
 
 단순한 반복문으로 해결한다면 O(N)으로 TLE가 나게되지만 세그먼트 트리를 이용하여 O(logN)으로 AC를 받을 수 있다.
+
 */
