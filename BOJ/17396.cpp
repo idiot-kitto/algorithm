@@ -51,10 +51,7 @@ int main(){fastio
             ll next = cur_dist + to_dist;
             if(next < dist[to]) pq.push({dist[to] = next, to});
         }
-    }
-
-    if(dist[n-1] == 1e18) cout << -1;
-    else cout << dist[n-1];
+    } cout << (dist[n-1] == 1e18 ? -1 : dist[n-1]);
 
     return 0;
 }
