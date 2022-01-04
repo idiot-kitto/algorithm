@@ -5,6 +5,7 @@ using namespace std;
 #define fastio ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
 #define all(x) (x).begin(), (x).end()
 #define pb push_back
+#define eb emplace_back
 
 typedef long long ll;
 typedef vector<int> vi;
