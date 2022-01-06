@@ -38,9 +38,9 @@ int main(){fastio
     bool ok = true;
     while(m--) {
         int a, b; cin >> a >> b;
-        if(dsu.find(a) == dsu.find(b)) ok = false;
-        if(!dsu.e[a]) dsu.e[a] = b;
-        else dsu.merge(dsu.e[a], b);
+        if(dsu.find(a) == dsu.find(b)) ok = false; // 우호관계인 a,b가 들어오면 false
+        if(!dsu.e[a]) dsu.e[a] = b; // a의 적 없으면 a의 적은 b
+        else dsu.merge(dsu.e[a], b); // a의 적 있으면 a의 적과 b는 우호 관계
         if(!dsu.e[b]) dsu.e[b] = a;
         else dsu.merge(a, dsu.e[b]);
     }
