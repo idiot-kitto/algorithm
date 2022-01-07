@@ -3,7 +3,10 @@
   - ```let arr = new Array(101)```
 - 객체 선언 ( C++의 map 비슷하게 사용 가능해 보임 )
   - ```let obj = {}```
-
+- 객체를 배열로
+  - key, value 값 둘다 : ```Object.entries(obj)```
+  - key 값만 : ```Object.keys(obj)```
+  - value 값만 : ```Object.values(obj)```
 
 ### 정렬
 - 오름차순
@@ -12,6 +15,7 @@
   - ```arr.sort((a,b) => b - a)```
 
 ### 수 다루기
+- 1,000,000,000 -> 1e9 로 사용 가능
 - max 함수
   - ```Math.max(a,b)```
 - min 함수
