@@ -40,6 +40,8 @@
 ### 문자열
 - 마지막 문자 자르기
   - ```s = s.slice(0, -1)```
+- 문자열 reverse
+  - ```s = s.split("").reverse().join("")```
 
 
 ### DSU
