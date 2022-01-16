@@ -39,7 +39,7 @@ int main(){fastio
         int a, b; cin >> a >> b;
         v[a].pb(b); v[b].pb(a);
     } go(1, 0);
-    cout << ans;
+    cout << ans; 
 
     return 0;
 }
