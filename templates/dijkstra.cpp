@@ -41,7 +41,7 @@ int main(){fastio
     while(!pq.empty()) { // 우선순위 큐가 빌 때까지
         ll cur_weight = pq.top().first, cur_node = pq.top().second; pq.pop(); // 첫번째 인자 : cur_weight : 현재 가중치
                                                                               // 두번째 인자 : cur_node : 현재 노드
-        if(dist[cur_node] < cur_weight) continue; // 지금 갱신해야 하는 값이 이미 저장된 값보다 크다면 갱신할 필요가 없으므로 다음 순서로 넘어간다.
+        if(weight[cur_node] < cur_weight) continue; // 지금 갱신해야 하는 값이 이미 저장된 값보다 크다면 갱신할 필요가 없으므로 다음 순서로 넘어간다.
         for(auto &[to, to_weight] : v[cur_node]) { // 현재 노드(cur_node)로부터 갈 수 있는 다음 노드(to)와 다음 노드로 가기 위한 가중치(to_weight) 에 대한 반복문.
                                                    // js의 구조분해할당같은 C++의 방식.
             ll next_weight = cur_weight + to_weight; // 다음 노드로 가는 가중치(next_weight) = 
