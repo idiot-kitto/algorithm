@@ -57,5 +57,17 @@ int main(){fastio
     } reverse(all(v2)); // 우측 비트부터 벡터에 담으므로 reverse 해준다.
     for(auto i : v2) cout << i; cout << '\n';
 
+    // 2022.03.06 추가
+
+    int num4 = (1 << 4) + (1 << 2); // 5번째 bit 가 1인 수
+    cout << "num4(" << num4 << ")'s bit 1 count : " << __builtin_popcount(num4) << '\n';
+    // __builtin_popcount(x) : x의 bit가 1인 것들의 개수를 구하는 내장함수
+    cout << "Count of leading zero : " << __builtin_clz(num4) << '\n';
+    // __builtin_clz(x) : x의 가장 앞에있는 1의 위치를 구하는 내장함수
+    cout << "Count of trailing zero : " << __builtin_ctz(num4) << '\n';
+    // __builtin_ctz(x) : x의 가장 뒤에있는 1의 위치를 구하는 내장함수
+
+    // 나중에 (x & -x) 공부하기 (펜윅에서도 쓰이는)
+
     return 0;
 }
