@@ -24,14 +24,6 @@ ll gcd(ll a,ll b){return b?gcd(b,a%b):a;}
 ll lcm(ll a,ll b){return a*b/gcd(a,b);}
 int dir[4][2] = {{1,0},{0,1},{-1,0},{0,-1}};
  
-struct DSU {
-    int n; vi pa;
-    DSU(int _n):n(_n) { pa.resize(n+1); iota(all(pa), 0); }
-    int find(int a) { return a == pa[a] ? a : (pa[a] = find(pa[a])); }
-    void merge(int a, int b) { pa[find(b)] = find(a); }
-    int check(int a, int b) { return find(a) == find(b); }
-};
- 
 int main(){fastio
     int t; cin >> t;
     while(t--) {
