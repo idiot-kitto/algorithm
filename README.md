@@ -1,7 +1,8 @@
-### 제가 해결한 알고리즘 문제풀이 저장소입니다 :fire:
+<!--### 제가 해결한 알고리즘 문제풀이 저장소입니다 :fire:
 - 매일 1문제 (이상)을 풀며 [solved.ac](https://solved.ac/profile/kitae0629) 스트릭(BOJ 잔디)을 유지하기 위해 노력합니다!
 <br>
-
+-->
+### :fire:
 - BOJ : [백준 온라인 저지](https://www.acmicpc.net/) 문제풀이 레포
 - Codeforces : [코드포스](https://codeforces.com/) 문제풀이 레포
 - Programmers : [프로그래머스](https://programmers.co.kr/) 문제풀이 레포
